@@ -21,7 +21,7 @@
                        redirectAttempted = true;
                         setTimeout(function() {
                          if (!redirectAttempted) {
-                         return; // 如果页面已经被重定向了，则不执行后续逻辑
+                         return; 
                        }
                 window.addEventListener('beforeunload', function(event) {
                  if (window.location.href === 'http://mcserver.sccc.top/') {
