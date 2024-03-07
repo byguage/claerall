@@ -17,7 +17,7 @@
             <p><strong>原因二：</strong>你的浏览器开启了一律使用HTTPS请关闭该选项再试;</p>
             <p><strong>原因三：</strong>请清除浏览器的cookie和缓存后再试</p>
             <p><strong>原因四：</strong>请打开你浏览器的无痕浏览页面再试</p>
-            <p><strong><a href="http://mcserver.sccc.top/" onclick="checkRedirect()">点击此处尝试返回HTTP连接</a></strong></p>
+            <p><strong><a href="http://mcserver.sccc.top" onclick="checkRedirect()">排查以上全部问题后点击此处尝试返回HTTP连接</a></strong></p>
             <script>
                 let redirectAttempted = false;
                 function checkRedirect() {
@@ -27,7 +27,7 @@
                             return;
                         }
                         
-                        if (window.location.href === 'http://mcserver.sccc.top/') {
+                        if (window.location.href === 'http://mcserver.sccc.top') {
                             alert('跳转失败，请按照提示检查你的浏览器设置');
                         }
                     }, 1000);
