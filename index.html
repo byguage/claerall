@@ -16,12 +16,18 @@
                     <p><strong>原因四：</strong>请打开你浏览器的无痕浏览页面再试</p>
                     <p><strong><a href="http://mcserver.sccc.top/" onclick="checkRedirect()">点击此处尝试返回HTTP连接</a></strong></p>
                     <script>
-                       function checkRedirect() {
-                         setTimeout(function() {
-                           if (location.href === 'http://mcserver.sccc.top/') {
-                                 alert('跳转失败，请按照提示检查你的浏览器设置');
-                                                      }
-                                                 }, 1000); 
-                                            }
-                                  </script>
+                    function checkRedirect() {
+                      setTimeout(function() {
+                         fetch('http://mcserver.sccc.top/')
+                          .then(response => {
+                              if (response.status === 200) {
+                               alert('跳转失败，请按照提示检查你的浏览器设置');
+                                                                           }
+                                                                     })
+                                                .catch(error => {
+                                       console.error('Error:', error);
+                               });
+                }, 1000); 
+          }
+</script>
                  </div><div class="box">
