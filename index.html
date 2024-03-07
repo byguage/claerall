@@ -9,5 +9,19 @@
                 <h3>请使用HTTP访问</h3>
             </div><div class="content-wrapper">
                 <div class="box">
-                    <h4>为什么会出现这个页面?：</h4><p><strong>原因一：这是MCSManager面板服的后台管理地址，使用HTTPS会导致远程节点访问不正常</strong>;</p><p><strong>原因二：</strong>你的浏览器开启了一律使用HTTPS请关闭该选项再试;</p><p><strong>原因三：</strong>请清除浏览器的cookie和缓存后再试</p><p><strong>原因四：</strong>请打开你浏览器的无痕浏览页面再试</p><p><strong><a href="http://mcserver.sccc.top/">点击此处尝试返回HTTP连接</strong></a></p>
-                </div><div class="box">
+                    <h4>为什么会出现这个页面?：</h4>
+                    <p><strong>原因一：这是MCSManager面板服的后台管理地址，使用HTTPS会导致远程节点访问不正常</strong>;</p>
+                    <p><strong>原因二：</strong>你的浏览器开启了一律使用HTTPS请关闭该选项再试;</p>
+                    <p><strong>原因三：</strong>请清除浏览器的cookie和缓存后再试</p>
+                    <p><strong>原因四：</strong>请打开你浏览器的无痕浏览页面再试</p>
+                    <p><strong><a href="http://mcserver.sccc.top/" onclick="checkRedirect()">点击此处尝试返回HTTP连接</strong></a></p>
+                    <script>
+                    function checkRedirect() {
+                      setTimeout(function() {
+                           if (location.href === 'http://mcserver.sccc.top/') {
+                              alert('跳转失败，请按照提示检查你的浏览器设置');
+                                                }
+                                            }, 1000); 
+                                          }
+                                </script>
+                 </div><div class="box">
