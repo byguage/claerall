@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>该网站暂时无法进行访问-403</title>
-        <style type="text/css">body{background-color:#F2F4F7;color:#616a88;-webkit-filter:blur(0.2px);filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius="0.2")}.container{max-width:680px;margin-left:auto;margin-right:auto;margin-top:120px}.content-header{text-align:center;margin-bottom:80px}h3{font-size:2.2em}h4{font-size:1.2em}</style>
-        <div class="container">
-            <div class="content-header">
-                <h3>请使用HTTP访问</h3>
-            </div><div class="content-wrapper">
-                <div class="box">
-                    <h4>为什么会出现这个页面?：</h4>
-                    <p><strong>原因一：这是MCSManager面板服的后台管理地址，使用HTTPS会导致远程节点访问不正常</strong>;</p>
-                    <p><strong>原因二：</strong>你的浏览器开启了一律使用HTTPS请关闭该选项再试;</p>
-                    <p><strong>原因三：</strong>请清除浏览器的cookie和缓存后再试</p>
-                    <p><strong>原因四：</strong>请打开你浏览器的无痕浏览页面再试</p>
-                    <p><strong><a href="http://mcserver.sccc.top/" onclick="checkRedirect()">点击此处尝试返回HTTP连接</a></strong></p>
-                    <script>
-                     let redirectAttempted = false;
-                      function checkRedirect() {
-                       redirectAttempted = true;
-                        setTimeout(function() {
-                         if (!redirectAttempted) {
-                         return; 
-                       }
-                window.addEventListener('beforeunload', function(event) {
-                 if (window.location.href === 'http://mcserver.sccc.top/') {
-                event.preventDefault(); 
-                alert('跳转失败，请按照提示检查你的浏览器设置');
-            }
-        });
-    }, 1000); 
-}
-</script>
-                 </div><div class="box">
+<head>
+<meta charset="utf-8">
+<title>该网站暂时无法进行访问-403</title>
+<style type="text/css">body{background-color:#F2F4F7;color:#616a88;-webkit-filter:blur(0.2px);filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius="0.2")}.container{max-width:680px;margin-left:auto;margin-right:auto;margin-top:120px}.content-header{text-align:center;margin-bottom:80px}h3{font-size:2.2em}h4{font-size:1.2em}</style>
+</head>
+<body>
+<div class="container">
+    <div class="content-header">
+        <h3>请使用HTTP访问</h3>
+    </div>
+    <div class="content-wrapper">
+        <div class="box">
+            <h4>为什么会出现这个页面?：</h4>
+            <p><strong>原因一：这是MCSManager面板服的后台管理地址，使用HTTPS会导致远程节点访问不正常</strong>;</p>
+            <p><strong>原因二：</strong>你的浏览器开启了一律使用HTTPS请关闭该选项再试;</p>
+            <p><strong>原因三：</strong>请清除浏览器的cookie和缓存后再试</p>
+            <p><strong>原因四：</strong>请打开你浏览器的无痕浏览页面再试</p>
+            <p><strong><a href="http://mcserver.sccc.top/" onclick="checkRedirect()">点击此处尝试返回HTTP连接</a></strong></p>
+            <script>
+                let redirectAttempted = false;
+                function checkRedirect() {
+                    redirectAttempted = true;
+                    setTimeout(function() {
+                        if (!redirectAttempted) {
+                            return;
+                        }
+                        // 检测页面是否被重定向回来
+                        if (window.location.href === 'http://mcserver.sccc.top/') {
+                            alert('跳转失败，请按照提示检查你的浏览器设置');
+                        }
+                    }, 1000);
+                }
+            </script>
+        </div>
+    </div>
+</div>
+</body>
+</html>
