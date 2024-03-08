@@ -23,7 +23,7 @@
 </div>
 <script>
 window.onload = function() {
-    if (document.referrer.includes('mcserver.sccc.top')) {
+    if (window.location.href !== 'http://mcserver.sccc.top/') {
         alert('跳转失败，请按照提示检查你的浏览器设置');
     }
 };
