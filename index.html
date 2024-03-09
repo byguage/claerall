@@ -24,7 +24,7 @@
                         console.log(uaData);
                         if (uaData.brands && uaData.brands.length > 0 && uaData.brands[0].brand === "Microsoft Edge") {
                             document.getElementById('reasonFive').innerHTML = '<strong>原因五：你的微软浏览器启用了 HSTS 功能请关闭它或等待缓存刷新</strong>';
-                        } else if (uaData.brands[0].brand === "Google Chrome") {
+                        } else if (navigator.userAgent.indexOf("Chrome") !== -1 && navigator.userAgent.indexOf("Edge") === -1) {
                             document.getElementById('reasonFive').innerHTML = '<strong>原因五：你的谷歌浏览器启用了 HSTS 功能请关闭它或等待缓存刷新</strong>';
                         }
                     }).catch((error) => {
