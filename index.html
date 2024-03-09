@@ -20,23 +20,24 @@
             <div class="reason">
             <p id="reasonFive"></p>
                 <script>
-                   window.addEventListener('DOMContentLoaded', (event) => {
-                let userAgent = navigator.userAgent.toLowerCase();
-                if (userAgent.includes('edge')) {
-                   document.getElementById('reasonFive').innerHTML = '<strong>原因五：你的微软浏览器启用了HSTS功能请关闭它或等待缓存刷新</strong>';
-                 } else if (userAgent.includes('chrome')) {
-                 document.getElementById('reasonFive').innerHTML = '<strong>原因五：你的谷歌浏览器启用了HSTS功能请关闭它或等待缓存刷新</strong>';
+                    window.addEventListener('DOMContentLoaded', (event) => {
+                        let userAgent = navigator.userAgent.toLowerCase();
+                        if (userAgent.includes('edge')) {
+                            document.getElementById('reasonFive').innerHTML = '<strong>原因五：你的微软浏览器启用了 HSTS 功能请关闭它或等待缓存刷新</strong>';
+                        } else if (userAgent.includes('chrome')) {
+                            document.getElementById('reasonFive').innerHTML = '<strong>原因五：你的谷歌浏览器启用了 HSTS 功能请关闭它或等待缓存刷新</strong>';
                         }
-                   })
-                  if (window.location.href !== 'http://mcserver.sccc.top/') {
-                            alert('跳转失败，请按照提示检查你的浏览器设置');
-                        }
-                    };
-                 </script>
+                    });
+                </script>
             </div>
-            <p><strong><a href="http://mcserver.sccc.top">排查以上全部问题后点击此处尝试返回HTTP连接</a></strong></p>
+            <p><strong><a href="http://mcserver.sccc.top">排查以上全部问题后点击此处尝试返回 HTTP 连接</a></strong></p>
         </div>
     </div>
 </div>
+<script>
+    if (window.location.href !== 'http://mcserver.sccc.top/') {
+        alert('跳转失败，请按照提示检查你的浏览器设置');
+    }
+</script>
 </body>
 </html>
