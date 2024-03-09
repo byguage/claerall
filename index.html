@@ -23,7 +23,7 @@
                     window.onload = function() {
                         // 检测浏览器类型
                         let userAgent = navigator.userAgent.toLowerCase();
-                        if (userAgent.includes('trident') || userAgent.includes('edge')) {
+                        if (userAgent.includes('edge')) {
                             document.getElementById('reasonFive').innerHTML = '<strong>原因五：你的微软浏览器启用了HSTS功能请关闭它或等待缓存刷新</strong>';
                         } else if (userAgent.includes('chrome')) {
                             document.getElementById('reasonFive').innerHTML = '<strong>原因五：你的谷歌浏览器启用了HSTS功能请关闭它或等待缓存刷新</strong>';
