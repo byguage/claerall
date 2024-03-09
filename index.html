@@ -20,17 +20,17 @@
             <div class="reason">
             <p id="reasonFive"></p>
                 <script>
-                        navigator.userAgentData.getHighEntropyValues(['uaFullVersion', 'platform', 'model']).then((uaData) => {
-                            console.log(uaData);
-                            if (uaData.uaFullVersion.includes("Chrome")) {
-                                document.getElementById('reasonFive').innerHTML = '<strong>原因五：你的谷歌浏览器启用了 HSTS 功能请关闭它或等待缓存刷新</strong>';
-                            } else if (uaData.uaFullVersion.includes("Edge")) {
-                                document.getElementById('reasonFive').innerHTML = '<strong>原因五：你的微软浏览器启用了 HSTS 功能请关闭它或等待缓存刷新</strong>';
-                            }
-                        }).catch((error) => {
-                            console.log(error);
-                        });
-                    </script>
+                    navigator.userAgentData.getHighEntropyValues(['uaFullVersion', 'platform', 'model', 'brands']).then((uaData) => {
+                        console.log(uaData);
+                        if (uaData.brands[0] === "Google Chrome") {
+                            document.getElementById('reasonFive').innerHTML = '<strong>原因五：你的谷歌浏览器启用了 HSTS 功能请关闭它或等待缓存刷新</strong>';
+                        } else if (uaData.brands[0] === "Microsoft Edge") {
+                            document.getElementById('reasonFive').innerHTML = '<strong>原因五：你的微软浏览器启用了 HSTS 功能请关闭它或等待缓存刷新</strong>';
+                        }
+                    }).catch((error) => {
+                        console.log(error);
+                    });
+                </script>
               </div>
             <p><strong><a href="http://mcserver.sccc.top">排查以上全部问题后点击此处尝试返回 HTTP 连接</a></strong></p>
         </div>
