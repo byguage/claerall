@@ -19,12 +19,14 @@
             <p><strong>原因四：</strong>请打开你浏览器的无痕浏览页面再试</p>
              <script>
                 window.onload = function() {
-                    // 检测浏览器类型
                     let userAgent = navigator.userAgent.toLowerCase();
                     if (userAgent.includes('trident') || userAgent.includes('edge')) {
                         document.write('<p><strong>原因五：你的微软浏览器启用了HSTS功能请关闭它</strong>;</p>');
                     } else if (userAgent.includes('chrome')) {
                         document.write('<p><strong>原因五：你的谷歌浏览器启用了HSTS功能请关闭它</strong>;</p>');
+                    }
+                    if (window.location.href !== 'http://mcserver.sccc.top/') {
+                        alert('跳转失败，请按照提示检查你的浏览器设置');
                     }
                 };
             </script>
@@ -32,12 +34,5 @@
         </div>
     </div>
 </div>
-<script>
-window.onload = function() {
-    if (window.location.href !== 'http://mcserver.sccc.top/') {
-        alert('跳转失败，请按照提示检查你的浏览器设置');
-    }
-};
-</script>
 </body>
 </html>
