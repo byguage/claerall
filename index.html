@@ -21,9 +21,9 @@
             <p id="reasonFive"></p>
                 <script>
                     window.addEventListener('DOMContentLoaded', (event) => {
-                        if (navigator.userAgent.indexOf("Chrome") !== -1 && navigator.userAgent.indexOf("Edge") === -1) {
+                        if (navigator.userAgent.indexOf("Chrome") !== -1 && !navigator.userAgent.indexOf("Edge") != -1) {
                             document.getElementById('reasonFive').innerHTML = '<strong>原因五：你的谷歌浏览器启用了 HSTS 功能请关闭它或等待缓存刷新</strong>';
-                        } else {
+                        } else if (navigator.userAgent.indexOf("Edge") !== -1 && !navigator.userAgent.indexOf("Chrome") != -1) {
                             document.getElementById('reasonFive').innerHTML = '<strong>原因五：你的微软浏览器启用了 HSTS 功能请关闭它或等待缓存刷新</strong>';
                         }
                     });
