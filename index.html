@@ -22,12 +22,9 @@
                 <script>
     navigator.userAgentData.getHighEntropyValues(['uaFullVersion', 'platform', 'model', 'brands']).then((uaData) => {
         console.log(uaData);
-        let isEdge = uaData.brands.some(brand => brand.brand === 'Microsoft Edge');
-        let isChrome = uaData.brands.some(brand => brand.brand === 'Google Chrome');
-
-        if (isEdge) {
+        if (uaData.brands.some(brand => brand.brand === 'Microsoft Edge')) {
             document.getElementById('reasonFive').innerHTML = '<strong>原因五：你的微软浏览器启用了 HSTS 功能请关闭它或等待缓存刷新</strong>';
-        } else if (isChrome) {
+             } else if (uaData.model.includes("Chrome")) {
             document.getElementById('reasonFive').innerHTML = '<strong>原因五：你的谷歌浏览器启用了 HSTS 功能请关闭它或等待缓存刷新</strong>';
         }
     }).catch((error) => {
